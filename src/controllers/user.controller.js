@@ -1,7 +1,7 @@
-const User = require("../db/user.db");
+const dbUsers = require("../db/user.db");
 
 async function getAll() {
-  const users = await User.getAll();
+  const users = await dbUsers.getAll();
   return users;
 }
 
