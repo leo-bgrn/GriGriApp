@@ -15,29 +15,36 @@ const insertNewLocationQuery =
   'INSERT INTO public.grigri_location(	"user", uuid, "from", "to")	VALUES ($1, $2, $3, $4);';
 
 const updateLocationQuery =
-  "UPDATE public.grigri_location SET \"to\"=$2 WHERE uuid = $1;";
+  'UPDATE public.grigri_location SET "to"=$2 WHERE uuid = $1;';
 
 async function getGriGriLocationsWithUsers() {
   const locations = await db.query(getGriGriLocationsWithUsersQuery);
+  console.log("Get all locations with users from database :", locations);
   return locations;
 }
 
 async function getAllLocations() {
   const locations = await db.query(getAllLocationsQuery);
+  console.log("Get all locations from database :", locations);
   return locations;
 }
 
 async function insertNewLocation(userId, uuid, from) {
   await db.query(insertNewLocationQuery, [userId, uuid, from, null]);
+  console.log(
+    `New location inserted in database for user ${userId}, uuid ${uuid}, date ${from}`
+  );
 }
 
 async function getCurrentLocation() {
   const locations = await db.query(getCurrentLocationQuery);
+  console.log("Get current location from database :", locations[0]);
   return locations[0];
 }
 
 async function updateLocation(uuid, to) {
   await db.query(updateLocationQuery, [uuid, to]);
+  console.log(`Location updated in database for uuid ${uuid}, to ${to}`);
 }
 
 module.exports = {

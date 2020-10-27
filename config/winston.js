@@ -11,6 +11,10 @@ var options = {
     maxsize: 5242880, // 5MB
     maxFiles: 5,
     colorize: false,
+    format: winston.format.combine(
+      winston.format.timestamp(),
+      winston.format.json()
+    )
   },
   console: {
     level: "debug",
