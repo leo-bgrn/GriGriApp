@@ -1,16 +1,18 @@
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
-var logger = require("morgan");
+var morgan = require("morgan");
 var bodyParser = require("body-parser");
+var winston = require('./config/winston');
 
 var app = express();
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-app.use(logger("dev"));
+app.use(morgan('tiny', { stream: winston.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: false }));
