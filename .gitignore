@@ -106,3 +106,4 @@ dist
 # Secrets
 *.secrets.js
 secrets.js
+test.js
