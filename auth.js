@@ -1,6 +1,9 @@
 const OktaJwtVerifier = require("@okta/jwt-verifier");
 const logger = require("./config/winston");
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 const oktaJwtVerifier = new OktaJwtVerifier({
   issuer: process.env.ISSUER,
   clientId: process.env.CLIENT_ID,
