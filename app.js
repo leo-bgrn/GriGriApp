@@ -4,7 +4,6 @@ var path = require("path");
 var morgan = require("morgan");
 var bodyParser = require("body-parser");
 var winston = require("./config/winston");
-const authMiddleware = require("./auth");
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -12,7 +11,6 @@ dotenv.config();
 var app = express();
 
 app.use(bodyParser.json());
-app.use(authMiddleware);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
