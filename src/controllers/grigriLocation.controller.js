@@ -1,6 +1,7 @@
 const dbLocation = require("../db/grigriLocation.db");
 const uuid = require("uuid");
 
+
 async function getCurrentLocation() {
   const location = await dbLocation.getCurrentLocation();
   return location;

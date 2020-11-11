@@ -29,6 +29,9 @@ app.use("/grigriLocation", locationRouter);
 let pointsRouter = require("./src/routes/points.route");
 app.use("/points", pointsRouter);
 
+let customRouter = require("./src/routes/custom.route");
+app.use("/custom", customRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

@@ -20,13 +20,13 @@ const updateLocationQuery =
 
 async function getGriGriLocationsWithUsers() {
   const locations = await db.query(getGriGriLocationsWithUsersQuery);
-  logger.info("Get all locations with users from database :", locations);
+  logger.info("Get all locations with users from database :" + locations);
   return locations;
 }
 
 async function getAllLocations() {
   const locations = await db.query(getAllLocationsQuery);
-  logger.info("Get all locations from database :", locations);
+  logger.info("Get all locations from database :" + locations);
   return locations;
 }
 
@@ -39,7 +39,7 @@ async function insertNewLocation(userId, uuid, from) {
 
 async function getCurrentLocation() {
   const locations = await db.query(getCurrentLocationQuery);
-  logger.info("Get current location from database :", locations[0]);
+  logger.info("Get current location from database :" + locations[0]);
   return locations[0];
 }
 

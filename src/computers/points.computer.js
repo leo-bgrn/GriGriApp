@@ -28,4 +28,5 @@ function datesToPoints(from, to) {
 
 module.exports = {
   computePoints,
+  datesToPoints,
 };
