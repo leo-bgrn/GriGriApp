@@ -11,6 +11,7 @@ function computePoints(allLocations, allUsers) {
       user: {
         id: user.id,
         name: user.name,
+        avatar: user.avatar
       },
       points: pointsByUserId[user.id],
     })

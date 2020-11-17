@@ -8,6 +8,7 @@ async function getCurrentInfo() {
   let res = {
     user: {
       name: dbRes[0].name,
+      avatar: dbRes[0].avatar,
       totalPoints: points.filter(
         (point) => point.user.name === dbRes[0].name
       )[0].points,
